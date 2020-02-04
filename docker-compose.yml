@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  ssh:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - username=xieda
+        - password=xiedacon
+    ports:
+      - "2222:22"
+    volumes:
+      - $HOME:/home/xieda
+      - /Users/xieda/e:/Users/xieda/e
+    restart: unless-stopped
